@@ -1,117 +1,76 @@
 <!DOCTYPE html>
 <hml>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Page</title>
+   
     <style>
-      #container{
-        text-align: center;
-        width:100%;
-      }
-      #hero{
-        width:100%;
-        height:240px;
-        object-fit: cover;
-      }
-      #contactbutton{
-         max-width:100%;
+      .container{
         display: flex;
-        justify-content:center;
-        margin-top:55px;
-        float:left
+        flex-direction:column;
+        align-items:center;
+        max-width:100%;
     
-      
-      
+      }
+      .img{
+        display:flex;
         
+        width:50%;
+        background-color:red;
       }
-     button{
-        width:90px;
-        height:50px;
-        background-color:black;
-        color:red;
-        align-items: center;
-       border-radius:20px;
-      
+      .hero-img{
+        align-items:center;
+        max-width:90%;
+        height:15rem;
+        object-fit:cover;
+        border-radious:50px;
       }
-      
-      h1{
-        font-size: 40px;
-        font-family:Monospace;
-        color:rgb(100,10,5)
-      }
-      h2{
-        font-size: 30px;
-        font-family:Luminari;
-        color:rgb(100,100,100)
-        
-      }
-      p{
-        font-family: Roboto;
-        font-family: 18px;
-        font-weight:900;
-        text-align:center;
-        padding:20px;
-        margin:50px
+      .paragraph p{
+        box-sizing: border-box;
+        text-align: center;
       }
       .job-container{
-        display:flex;
-        flex-direction: column;
-        border-bottom: 5px black;
-        font-family: Roboto;
-        font-family: 24px;
+       float:left;
+      }
    
-      }
-      .job{
-        padding:10px;
-        margin:10px;
-        margin-right:125px;
-        font-family: Roboto;
-        font-family: 24px;
-      }
-      .title{
-        padding:10px;
-        margin:10px;
-        margin-right:125px;
-        font-family: Roboto;
-        font-family: 24px;
-      }
-      .salary{
-        padding:10px;
-        margin:10px;
-        margin-right:125px;
-        font-family: Roboto;
-        font-family: 24px;
-      }
-      .apply{
-        float:right;
-        
-        margin-right:125px;
-      }
-      
      
     </style>
   </head>
   <body>
-    <div id="container">
+    <div class="container">
       <h1>Careers.co.xza</h1>
-      <img id="hero" src="https://05c707c7-9faa-4efe-9ce9-05d0cf402444-00-1vyy5l5nfyp0z.spock.replit.dev/static/debut_home_hero-img.jpg"  />
+      <div class="img">
+         <img id="hero" src="https://05c707c7-9faa-4efe-9ce9-05d0cf402444-00-1vyy5l5nfyp0z.spock.replit.dev/static/debut_home_hero-img.jpg"class="hero-img" />
+
+      </div>
+     
       <h2>About Careers.co.za</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
+      <div class="paragraph">
+        <p>Lorem Ipsum is simply dummy text of the printing <br>and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and <br>scrambled it to make a type specimen book. It has survived not only five centuries, <br>but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in <br>the 1960s with the release of Letraset sheets containing<br> Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker<br>including versions of Lorem Ipsum.
+          </p>
+      </div>
+    
       <h2>Open Positions</h2>
-      <div class="job-container">
-        {% for job in jobs%}
-          <div class="job">Title:{{job["title"]}}</div>
-          <div class="title">Location:{{job["location"]}}</div>
-          <div class="salary">Salary:{{job["salary"]}}</div>
-          <div class="apply"><button>Apply</button></div>
-        
-         {% endfor %}
+      <div>
+       
         
       
       </div >
-    <div id="contactbutton">
-      <button>Contact Us</button>
+    <div>
+      <div class="job-container">
+          {% for job in jobs%}
+             <div>Title:{{job["title"]}}</div>
+            <div>Location:{{job["location"]}}</div>
+            <div>Salary:{{job["salary"]}}</div>
+          <div><button>Apply</button></div>
+           {% endfor %}
+      
+      </div>
+       
     </div>
+       <button>contact Us</button>
     
   </body>
 </hml>
